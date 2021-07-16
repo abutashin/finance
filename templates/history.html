@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col" style="text-align:left;">Symbol</th>
+            <th scope="col" style="text-align:left;">Type</th>
+            <th scope="col" style="text-align:left;">Shares</th>
+            <th scope="col" style="text-align:left;">Price/Amount (in USD)</th>
+            <th scope="col" style="text-align:left;">Transacted</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for i in range(length) %}
+            <tr>
+                {% for j in person[i]%}
+                <td scope="col" class="table-striped" style="text-align:left;"> {{ person[i][j] }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
